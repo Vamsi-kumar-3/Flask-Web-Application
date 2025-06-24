@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="{{ url_for('edit_task', task_id=task.id) }}" method="post" class="edit-form">
+        <input type="text" name="content" value="{{ task.content }}" required>
+        <div class="form-actions">
+            <button type="submit" class="save-btn">Save</button>
+            <a href="{{ url_for('index') }}" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+{% endblock %}
